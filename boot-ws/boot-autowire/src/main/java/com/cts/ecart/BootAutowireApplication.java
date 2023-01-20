@@ -4,10 +4,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 
-import com.cts.ecart.entity.Product;
-import com.cts.ecart.repository.ProductMySQLRepositoryImpl;
 import com.cts.ecart.service.ProductService;
-import com.cts.ecart.service.ProductServiceImpl;
 
 @SpringBootApplication
 public class BootAutowireApplication {
@@ -16,11 +13,11 @@ public class BootAutowireApplication {
 		
 		ConfigurableApplicationContext ac= SpringApplication.run(BootAutowireApplication.class, args);
 		//ProductRepositoryImpl prodRepo = ac.getBean(ProductRepositoryImpl.class);
-		ProductService ps = ac.getBean(ProductService.class);
+		//ProductService ps = ac.getBean(ProductService.class);
 		
-		Product p1=new Product();
+		//Product p1=new Product();
 		
-		ps.saveProduct();
+		///ps.saveProduct();
 						
 		
 		

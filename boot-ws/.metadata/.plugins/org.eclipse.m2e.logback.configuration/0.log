@@ -1959,3 +1959,6 @@ org.eclipse.core.runtime.CoreException: Launch configuration BootAopApplication 
 2023-01-23 13:31:56,472 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-01-23 13:31:56,473 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
 2023-01-23 13:31:56,474 [Worker-33: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/praveen/training/jan-adm-b1/boot-ws/boot-jdbc-template/src/test/resources
+2023-01-23 14:36:24,322 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-01-23 14:36:24,323 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - Copying 1 resource
+2023-01-23 14:36:24,324 [Worker-47: Building] INFO  o.a.m.s.f.DefaultMavenResourcesFiltering - skip non existing resourceDirectory /Users/praveen/training/jan-adm-b1/boot-ws/boot-jdbc-template/src/test/resources

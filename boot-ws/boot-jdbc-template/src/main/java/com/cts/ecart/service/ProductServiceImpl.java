@@ -9,7 +9,7 @@ public class ProductServiceImpl {
 	
 	@Transactional(propagation = Propagation.REQUIRED)
 	public void operations() {
-		f1();
+		f1(); // txn_id
 		f2();
 		f3();
 	}

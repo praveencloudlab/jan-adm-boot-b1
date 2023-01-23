@@ -5,6 +5,17 @@ public class Product {
 	private String productName;
 	private double price;
 
+	public Product() {
+		// TODO Auto-generated constructor stub
+	}
+
+	public Product(int productId, String productName, double price) {
+		super();
+		this.productId = productId;
+		this.productName = productName;
+		this.price = price;
+	}
+
 	public int getProductId() {
 		return productId;
 	}
@@ -27,6 +38,11 @@ public class Product {
 
 	public void setPrice(double price) {
 		this.price = price;
+	}
+
+	@Override
+	public String toString() {
+		return "Product [productId=" + productId + ", productName=" + productName + ", price=" + price + "]";
 	}
 
 }

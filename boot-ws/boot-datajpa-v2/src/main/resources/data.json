@@ -1,0 +1,5 @@
+[
+{"empId":10,"empName":"Praveen","salary":487874,"dept":{"deptId":100,"deptName":"HR","location":"Chennai"}},
+{"empId":11,"empName":"James","salary":947974994,"dept":{"deptId":101,"deptName":"Accounts","location":"Mumbai"}}
+
+]

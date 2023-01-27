@@ -1,0 +1,11 @@
+
+{
+ "deptId":10204,"deptName":"HR","location":"Mumbai",
+ "emps":[
+			{"empId":10,"empName":"Praveen","salary":487874},
+			{"empId":11,"empName":"James","salary":975495},
+			{"empId":12,"empName":"David","salary":3654544},
+			{"empId":13,"empName":"Preeti","salary":957955},
+			{"empId":14,"empName":"Divya","salary":9559959}
+	    ]
+}

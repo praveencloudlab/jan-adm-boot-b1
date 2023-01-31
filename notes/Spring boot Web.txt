@@ -1,0 +1,108 @@
+Spring boot Web
+=====================
+	1.spring boot web mvc
+	2.spring boot rest api
+
+	spring boot web mvc
+	=======================
+	Spring Web MVC is a model-view-controller (MVC) framework for building web applications using the Spring framework. It provides a complete and flexible infrastructure for building Java-based web applications, from the front-end user interface to the back-end database. The framework follows the MVC design pattern, which separates the application logic into three parts: the model, which represents the data and business logic; the view, which is responsible for presenting the data to the user; and the controller, which handles user inputs and updates the model and view accordingly. Spring Web MVC provides a rich set of features, such as support for RESTful web services, templating, validation, and security.
+
+
+    Advantages
+    ============
+    Modularity: Spring Web MVC follows the modular design pattern, which allows developers to isolate and manage components of the application easily.
+
+	Flexibility: The framework provides a wide range of features and configuration options, which allows developers to build web applications that meet their specific requirements.
+
+	Testability: Spring Web MVC facilitates automated testing, making it easier to write and maintain unit tests for the application.
+
+	Reusability: The framework provides a number of reusable components, such as controllers, validators, and converters, which can be easily shared between different applications.
+
+	Integrations: Spring Web MVC integrates well with other parts of the Spring ecosystem, such as Spring Data, Spring Security, and Spring Boot, making it easier to build and deploy complex web applications.
+
+	Performance: The framework has been optimized for performance and can handle high traffic loads, making it suitable for large-scale web applications.
+
+
+	Spring boot web mvc view resolvers
+    =====================================
+    In Spring Boot Web MVC, a view resolver is responsible for mapping a logical view name to a physical view, such as a JSP page or a Thymeleaf template. Spring Boot supports multiple view resolvers, including:
+
+	InternalResourceViewResolver: Maps a logical view name to a JSP page located within the application.
+
+	ThymeleafViewResolver: Maps a logical view name to a Thymeleaf template.
+
+	FreeMarkerViewResolver: Maps a logical view name to a FreeMarker template.
+
+	MustacheViewResolver: Maps a logical view name to a Mustache template.
+
+	GroovyMarkupViewResolver: Maps a logical view name to a Groovy markup template.
+
+	By default, Spring Boot configures the InternalResourceViewResolver, which is capable of resolving views written in JSPs. If you want to use a different view technology, you will need to include the corresponding library in your project and configure the view resolver in your application's configuration class.
+
+    Handler mapping
+    ===================
+	In Spring Boot Web MVC, a handler mapper is responsible for mapping incoming HTTP requests to a specific handler, such as a controller method. There are several handler mappers available in Spring Boot, including:
+
+
+	RequestMappingHandlerMapping: Maps HTTP requests to methods annotated with @RequestMapping.
+
+	SimpleUrlHandlerMapping: Maps URLs to controllers or any other type of request handler using a mapping table.
+
+	BeanNameUrlHandlerMapping: Maps URLs to controllers or any other type of request handler based on the bean name.
+
+	HandlerMethodMappingNamingStrategy: A strategy interface used to determine the name of a handler method.
+
+	By default, Spring Boot configures the RequestMappingHandlerMapping as the primary handler mapper. If you want to use a different handler mapper, you can configure it in your application's configuration class. Additionally, you can also customize the behavior of the handler mapper by implementing custom handler adapters and handler exception resolvers.
+
+
+
+    Creating spring boot web mvc application
+    ============================================
+    Set up the development environment: Install the latest version of Java and a suitable Integrated Development Environment (IDE), such as IntelliJ IDEA or Eclipse.
+
+	Create a new project: Use the Spring Initializer website or your IDE to create a new Spring Boot project.
+
+	Add the Spring Web MVC dependency: Open the project's pom.xml file and add the spring-boot-starter-web dependency.
+
+	Create a model class: Create a Java class to represent the data you want to display in your web pages.
+
+	Create a controller class: Create a Java class annotated with @RestController to handle incoming HTTP requests and return the data to the view.
+
+	Create a view: Create a view, such as a JSP page or a Thymeleaf template, to display the data to the user.
+
+	Configure the view resolver: In the application's configuration class, configure the view resolver to map the logical view name to the physical view.
+
+	Run the application: Use the mvn spring-boot:run command or run the application from your IDE to start the web server and view the application in a web browser.
+
+	Test the application: Send HTTP requests to the application using a web browser or a tool such as curl to verify that the application is working as expected.
+
+	These are the basic steps to create a simple Spring Boot Web MVC application. You can extend the application by adding more features, such as security, database integration, or other customizations.
+
+
+
+
+
+
+
+
+   
+
+
+
+    
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+

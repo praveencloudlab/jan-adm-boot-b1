@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<h1>Employee Form</h1>
+	<hr />
+
+
+	<form action="./saveV2" method="post">
+
+		<div>
+			<label>Product ID</label> 
+			<input name="id">
+		</div>
+		
+		<div>
+			<label>Product Name</label> 
+			<input name="name" th:value="${product.name}">
+		</div>
+		
+		<div>
+			<label>Price</label> 
+			<input name="price">
+		</div>
+		
+		<div>
+			<label>Description</label> 
+			<textarea name="description"></textarea>
+		</div>
+		
+		
+		<div>
+			<label>Store Location</label> 
+			<select name="storeInfo.location" onchange="{window.location.href = './loadStoreNames'}">
+        		<option th:each="location : ${locations}" th:value="${location}"  th:text="${location}"></option>	
+			</select>
+		</div>
+		
+		<div>
+			<label>Store Name</label> 
+			<input name="storeInfo.storeName">
+		</div>
+		
+		
+		
+		<div>
+			<label>Product category</label> 
+			<input name="storeInfo.categoryName">
+		</div>
+		
+	
+		<div>
+			<label>Product Brand</label> 
+			<select name="storeInfo.productBrad">
+			<option>Apple</option>
+			<option>HP</option>
+			<option>Samsung</option>
+			<option>Dell</option>
+			
+			</select>
+		</div>
+		
+		
+		<div>
+			<button>Save</button>
+		</div>
+
+	</form>
+
+
+
+
+</body>
+</html>

@@ -4,23 +4,30 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.cts.ecart.model.Brand;
 import com.cts.ecart.model.Product;
+import com.cts.ecart.service.StoreServiceImpl;
 
 @Controller
 public class ProductController {
 	
+	 
 	
-
-	List<String> storeLocations=Arrays.asList("Chennai","Hyderabad","Bangalore","Pune","Delhi","Mumbai");
-	
+	@Autowired
+	private StoreServiceImpl ssi;
+		
 	@RequestMapping(value = "/")
 	public String welcome() {
 		return "index";
@@ -28,7 +35,6 @@ public class ProductController {
 	
 	
 	// read data from form
-	
 	@RequestMapping(value = "/save")
 	public String saveEmployee(@RequestParam int id ,@RequestParam String name,@RequestParam double price,@RequestParam String description) {
 		// read data from form
@@ -41,11 +47,7 @@ public class ProductController {
 	public String saveEmployeeV1(@ModelAttribute Product prod) {
 		// read data from form
 		
-		System.out.println(prod.getId());
-		System.out.println(prod.getName());
-		System.out.println(prod.getPrice());
-		System.out.println(prod.getDescription());
-		
+		System.out.println(prod);
 		
 		return "index";
 	}
@@ -54,36 +56,33 @@ public class ProductController {
 	public String saveEmployeeV2(@ModelAttribute Product prod) {
 		// read data from form
 		
-		System.out.println(prod.getId());
-		System.out.println(prod.getName());
-		System.out.println(prod.getPrice());
-		System.out.println(prod.getDescription());
-		System.out.println(prod.getStoreInfo().getStoreName());
-		System.out.println(prod.getStoreInfo().getLocation());
-		System.out.println(prod.getStoreInfo().getProductBrad());
-		System.out.println(prod.getStoreInfo().getCategoryName());
+		System.out.println(prod);
+		System.out.println("===============================");
+		System.out.println(prod.getBrand().getBrandTitle());
+		System.out.println(prod.getCategory().getCategoryTitle());
+		System.out.println(prod.getStockInfo().getStock());
+		System.out.println(prod.getPriceInfo().getPrice());
+		
 		
 		
 		return "index";
 	}
 	
 	@RequestMapping(value = "/loadFormV1")
-	public String loadFormV1(Model model,@ModelAttribute Product product) {
-		String[] locations= {"A","B","C"};
-		model.addAttribute("locations",storeLocations );
-		product.setName("Laptop");
-		model.addAttribute("product", product);
+	public String loadFormV1(Model model) {
 		
+		model.addAttribute("categories",ssi.getCategories() );
 		return "product-form2";
 	}
 	
-	@RequestMapping(value = "/loadStoreNames")
-	public String loadStoreNames(@ModelAttribute Product product,Model model) {
+	@GetMapping(value = "/loadCategories")
+	@ResponseBody
+	public List<Brand> loadStoreNames(@RequestParam int categoryId) {
 		System.out.println("... loading stores...");
-		model.addAttribute("locations",storeLocations );
+		
 		//System.out.println("Selected location:: "+product.getStoreInfo().getLocation());
-		System.out.println(product);
-		return "product-form2";
+		System.out.println("======>"+categoryId);
+		return ssi.getBrands(categoryId);
 	}
 	
 	

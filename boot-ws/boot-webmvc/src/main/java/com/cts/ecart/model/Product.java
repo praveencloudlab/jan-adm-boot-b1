@@ -2,43 +2,62 @@ package com.cts.ecart.model;
 
 public class Product {
 
-	private int id;
-	private String name;
-	private double price;
+	private int productId;
+	private String productTitle;
 	private String description;
 
-	private StoreInfo storeInfo;
+	private PriceInfo priceInfo;
+	private StockInfo stockInfo;
 
-	public StoreInfo getStoreInfo() {
-		return storeInfo;
+	private Category category;
+	private Brand brand;
+
+	public StockInfo getStockInfo() {
+		return stockInfo;
 	}
 
-	public void setStoreInfo(StoreInfo storeInfo) {
-		this.storeInfo = storeInfo;
+	public void setStockInfo(StockInfo stockInfo) {
+		this.stockInfo = stockInfo;
 	}
 
-	public int getId() {
-		return id;
+	public int getProductId() {
+		return productId;
 	}
 
-	public void setId(int id) {
-		this.id = id;
+	public void setProductId(int productId) {
+		this.productId = productId;
 	}
 
-	public String getName() {
-		return name;
+	public String getProductTitle() {
+		return productTitle;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setProductTitle(String productTitle) {
+		this.productTitle = productTitle;
 	}
 
-	public double getPrice() {
-		return price;
+	public PriceInfo getPriceInfo() {
+		return priceInfo;
 	}
 
-	public void setPrice(double price) {
-		this.price = price;
+	public void setPriceInfo(PriceInfo priceInfo) {
+		this.priceInfo = priceInfo;
+	}
+
+	public Category getCategory() {
+		return category;
+	}
+
+	public void setCategory(Category category) {
+		this.category = category;
+	}
+
+	public Brand getBrand() {
+		return brand;
+	}
+
+	public void setBrand(Brand brand) {
+		this.brand = brand;
 	}
 
 	public String getDescription() {
@@ -51,10 +70,9 @@ public class Product {
 
 	@Override
 	public String toString() {
-		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", description=" + description
-				+ ", storeInfo=" + storeInfo + "]";
+		return "Product [productId=" + productId + ", productTitle=" + productTitle + ", description=" + description
+				+ ", priceInfo=" + priceInfo + ", stockInfo=" + stockInfo + ", category=" + category + ", brand="
+				+ brand + "]";
 	}
-	
-	
 
 }

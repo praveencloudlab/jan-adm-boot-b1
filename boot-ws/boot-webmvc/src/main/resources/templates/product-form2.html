@@ -4,6 +4,24 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"  ></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+      $(document).ready(function() {
+        $("#categoryTitle").change(function() {
+          var categoryId = $(this).val();
+          $.get("./loadCategories?categoryId=" + categoryId, function(data) {
+            $("#brandName").empty();
+            $.each(data, function(index, brand) {
+              $("#brandName").append("<option value='" + brand.brandId+ "'>" + brand.brandName + "</option>");
+            });
+          });
+        });
+      });
+    /*]]>*/
+  </script>
+
 </head>
 <body>
 	<h1>Employee Form</h1>
@@ -11,20 +29,19 @@
 
 
 	<form action="./saveV2" method="post">
-
 		<div>
-			<label>Product ID</label> 
-			<input name="id">
-		</div>
-		
-		<div>
-			<label>Product Name</label> 
-			<input name="name" th:value="${product.name}">
+			<label>Product Title</label> 
+			<input name="productTitle">
 		</div>
 		
 		<div>
 			<label>Price</label> 
-			<input name="price">
+			<input name="priceInfo.price">
+		</div>
+		
+		<div>
+			<label>keywords</label> 
+			<textarea name="keywords"></textarea>
 		</div>
 		
 		<div>
@@ -32,38 +49,28 @@
 			<textarea name="description"></textarea>
 		</div>
 		
+		<div>
+			<label>Quantity</label> 
+			<input name="stockInfo.stock">
+		</div>
 		
 		<div>
-			<label>Store Location</label> 
-			<select name="storeInfo.location" onchange="{window.location.href = './loadStoreNames'}">
-        		<option th:each="location : ${locations}" th:value="${location}"  th:text="${location}"></option>	
+			<label>Select Category</label> 
+			<select name="category.categoryTitle" id="categoryTitle">
+			<option value="">Select category</option>
+        		<option th:each="category : ${categories}" th:value="${category.categoryId}"  th:text="${category.categoryName}"></option>	
 			</select>
 		</div>
 		
 		<div>
-			<label>Store Name</label> 
-			<input name="storeInfo.storeName">
-		</div>
-		
-		
-		
-		<div>
-			<label>Product category</label> 
-			<input name="storeInfo.categoryName">
-		</div>
-		
-	
-		<div>
-			<label>Product Brand</label> 
-			<select name="storeInfo.productBrad">
-			<option>Apple</option>
-			<option>HP</option>
-			<option>Samsung</option>
-			<option>Dell</option>
-			
+			<label>Select Brand Name</label> 
+			<select name="brand.brandTitle" id="brandName">
+				<option value="">Select a state name</option>
 			</select>
 		</div>
 		
+
+
 		
 		<div>
 			<button>Save</button>

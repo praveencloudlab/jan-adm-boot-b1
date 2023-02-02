@@ -56,15 +56,15 @@
 		
 		<div>
 			<label>Select Category</label> 
-			<select name="category.categoryTitle" id="categoryTitle">
+			<select name="category.categoryId" id="categoryTitle">
 			<option value="">Select category</option>
-        		<option th:each="category : ${categories}" th:value="${category.categoryId}"  th:text="${category.categoryName}"></option>	
+        		<option th:each="category : ${categories}" th:value="${category.categoryId}"  th:text="${category.categoryTitle}"></option>	
 			</select>
 		</div>
 		
 		<div>
 			<label>Select Brand Name</label> 
-			<select name="brand.brandTitle" id="brandName">
+			<select name="brand.brandId" id="brandName">
 				<option value="">Select a state name</option>
 			</select>
 		</div>

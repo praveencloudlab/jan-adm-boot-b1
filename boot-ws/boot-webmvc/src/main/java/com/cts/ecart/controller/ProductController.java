@@ -69,9 +69,10 @@ public class ProductController {
 	}
 	
 	@RequestMapping(value = "/loadFormV1")
-	public String loadFormV1(Model model) {
+	public String loadFormV1(Model model,@ModelAttribute Product product) {
 		
 		model.addAttribute("categories",ssi.getCategories() );
+		model.addAttribute("product",product);
 		return "product-form2";
 	}
 	

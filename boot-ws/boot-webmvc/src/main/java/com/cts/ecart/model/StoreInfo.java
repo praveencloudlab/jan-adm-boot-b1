@@ -52,6 +52,8 @@ public class StoreInfo {
 		return "StoreInfo [storeId=" + storeId + ", storeName=" + storeName + ", location=" + location
 				+ ", productBrad=" + productBrad + ", categoryName=" + categoryName + "]";
 	}
+	
+	
 
 	
 }

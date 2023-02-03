@@ -1,0 +1,81 @@
+Web Services
+======================
+1.SOAP
+	SOAP (Simple Object Access Protocol) is a protocol for exchanging structured information in the implementation of web services. It is a XML-based messaging protocol that defines a set of rules for encoding messages in a format that can be transmitted over HTTP or any other reliable transport. The purpose of SOAP is to provide a standard way for applications to communicate with each other, regardless of the platform or programming language being used.
+
+2.REST
+	REST (Representational State Transfer) is a software architectural style and a set of constraints for creating web services. It is a client-server architecture where the client makes requests to the server for resources, and the server returns responses with the requested resources or status codes indicating the outcome of the request. REST is based on HTTP and is typically used with HTTP verbs such as GET, POST, PUT, and DELETE. The RESTful web services return data in a format like XML or JSON, and the response is sent over the HTTP protocol. The key characteristics of a RESTful web service include statelessness, cacheability, and a uniform interface.
+
+
+	HTTP status codes
+	====================
+	100 - Information
+	200 - OK -  Success
+	300 - redirect
+	400 - client side error
+	500 - server side error
+
+
+	HTTP status codes are three-digit codes returned by a server in response to an HTTP request made by a client. They indicate the outcome of the request and provide information about what action to take next. Some of the most commonly used HTTP status codes are:
+
+	1xx - Informational: The request was received, and the server is continuing to process it.
+
+	2xx - Success: The request was successfully received, understood, and accepted.
+	200 OK: The request was successful.
+	201 Created: The request was successful and a resource was created.
+	204 No Content: The request was successful, but there is no representation to return.
+
+	3xx - Redirection: Further action must be taken in order to complete the request.
+	301 Moved Permanently: The requested resource has been permanently moved to a new location.
+	302 Found: The requested resource temporarily resides at a different URI.
+
+	4xx - Client Error: The request contains bad syntax or cannot be fulfilled by the server.
+	400 Bad Request: The request was invalid or cannot be otherwise served.
+	401 Unauthorized: The request requires user authentication.
+	403 Forbidden: The server understands the request, but it refuses to authorize it.
+	404 Not Found: The requested resource could not be found but may be available again in the future.
+
+	5xx - Server Error: The server failed to fulfill a valid request.
+	500 Internal Server Error: An unexpected condition was encountered by the server.
+	503 Service Unavailable: The server is currently unable to handle the request due to maintenance or capacity issues.
+
+	These codes play a crucial role in communicating the outcome of an HTTP request and help to ensure the proper functioning of the World Wide Web.
+
+
+
+	REST
+	========
+	1.JAX-RS (oracle provider : spec)
+		JAX-RS (Java API for RESTful Web Services) is a Java-based API for creating RESTful web services. There are several popular implementations of JAX-RS, including:
+
+	Jersey: A reference implementation of JAX-RS that provides a complete and stable API for building RESTful web services.
+
+	RESTEasy: A JBoss project that provides a fully certified implementation of the JAX-RS specification.
+
+	Apache CXF: A fully featured web services framework that includes support for JAX-RS, as well as other web service standards like SOAP.
+
+	Spring: A popular framework for building Java applications that provides built-in support for JAX-RS through the Spring MVC module.
+
+	Restlet: A lightweight framework for building RESTful web services that provides a JAX-RS implementation.
+
+	These JAX-RS implementations make it easier for developers to build RESTful web services in Java by providing a standard set of APIs for creating, accessing, and manipulating resources.
+
+
+	2.Spring Rest API (spring provider: spec)
+
+	Spring Rest API is a feature of the Spring framework that allows developers to build RESTful web services using Java. The Spring framework provides a comprehensive set of tools and features for building RESTful APIs, including support for HTTP methods, content negotiation, exception handling, and more.
+
+	In Spring, RESTful web services can be built using either Spring MVC or Spring Webflux. Spring MVC is a traditional, synchronous, servlet-based approach to building RESTful web services, while Spring Webflux is a reactive, asynchronous, non-blocking framework that is optimized for building reactive web services.
+
+	Both approaches provide a high-level API for defining RESTful resources and handling incoming HTTP requests, as well as support for a wide range of data formats, including XML, JSON, and others.
+
+	With Spring, developers can create RESTful web services quickly and easily, taking advantage of the framework's extensive support for security, testing, and other key concerns. Additionally, the Spring framework provides a large number of plugins and extensions for integrating with various technologies and tools, making it a flexible and powerful platform for building RESTful APIs.
+
+
+
+
+
+
+
+
+

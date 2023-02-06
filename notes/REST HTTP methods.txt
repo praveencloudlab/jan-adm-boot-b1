@@ -1,0 +1,11 @@
+REST HTTP methods
+
+1.GET   (retrival from server)
+2.POST  (send objects from cleint to server)
+3.PUT   (update data in the server side)
+4.DELETE (delete data from server)
+
+//===================================================
+
+
+

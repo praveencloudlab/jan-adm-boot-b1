@@ -1,0 +1,27 @@
+ecart  application sample rest end points
+=============================================
+Here are some common REST endpoint names for an e-commerce platform that could be implemented in a Spring Boot application:
+
+GET /products - Retrieve a list of all products.
+GET /products/{id} - Retrieve a single product by its ID.
+POST /products - Create a new product.
+PUT /products/{id} - Update an existing product.
+DELETE /products/{id} - Delete a product by its ID.
+GET /categories - Retrieve a list of all product categories.
+GET /categories/{id} - Retrieve a single category by its ID.
+POST /categories - Create a new product category.
+PUT /categories/{id} - Update an existing product category.
+DELETE /categories/{id} - Delete a product category by its ID.
+GET /orders - Retrieve a list of all orders.
+GET /orders/{id} - Retrieve a single order by its ID.
+POST /orders - Create a new order.
+PUT /orders/{id} - Update an existing order.
+DELETE /orders/{id} - Delete an order by its ID.
+GET /customers - Retrieve a list of all customers.
+GET /customers/{id} - Retrieve a single customer by its ID.
+POST /customers - Create a new customer.
+PUT /customers/{id} - Update an existing customer.
+DELETE /customers/{id} - Delete a customer by its ID.
+
+
+

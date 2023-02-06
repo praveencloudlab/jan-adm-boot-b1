@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+<link th:include="header::common-header"></link>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script th:inline="javascript">
+    /*<![CDATA[*/
+      $(document).ready(function() {
+        $("#categoryTitle").change(function() {
+          var categoryId = $(this).val();
+          $.get("./loadCategories?categoryId=" + categoryId, function(data) {
+            $("#brandName").empty();
+            $.each(data, function(index, brand) {
+              $("#brandName").append("<option value='" + brand.brandId+ "'>" + brand.brandTitle + "</option>");
+            });
+          });
+        });
+      });
+    /*]]>*/
+  </script>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body class="container">
+	<header th:include="header :: banner"></header>
+	<hr />
+<nav class="nav justify-content-center" th:include="header :: menu"></nav>
+
+    <div class="row">
+    <div class="col-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 col-xxl-8">
+    <div class="card" style="width:100%">
+   	<h5 class="card-header">Product Form</h5>
+   	<div class="card-body">
+   	<div class="card-text">
+   	<form action="./saveV2" method="post">
+		<div class="mb-3">
+			<label>Product Title</label> 
+			<input name="productTitle" class="form-control">
+		</div>
+		
+		<div class="mb-3">
+			<label>Price</label> 
+			<input name="priceInfo.price" class="form-control">
+		</div>
+		
+		<div class="mb-3">
+			<label>keywords</label> 
+			<textarea name="keywords" class="form-control"></textarea>
+		</div>
+		
+		<div class="mb-3">
+			<label>Description</label> 
+			<textarea name="description" class="form-control"></textarea>
+		</div>
+		
+		<div class="mb-3">
+			<label>Quantity</label> 
+			<input name="stockInfo.stock" class="form-control">
+		</div>
+		
+		<div class="mb-3">
+			<label>Select Category</label> 
+			<select name="category.categoryId" id="categoryTitle" class="form-select">
+			<option value="">Select category</option>
+        		<option th:each="category : ${categories}" th:value="${category.categoryId}"  th:text="${category.categoryTitle}"></option>	
+			</select>
+		</div>
+		
+		<div class="mb-3">
+			<label>Select Brand Name</label> 
+			<select name="brandId" id="brandName" class="form-select">
+				<option value="">Select a state name</option>
+			</select>
+		</div>
+		<div class="mb-3">
+			<button>Save</button>
+		</div>
+
+	</form>
+   	</div>
+   	</div>
+    </div>
+    
+    </div>
+    </div>
+	
+
+
+
+
+</body>
+</html>
